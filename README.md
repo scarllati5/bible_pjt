@@ -39,22 +39,18 @@
 ## 개발
 **-프로젝트 구조**
 ```
-bible-verse-search/
+bible_pjt/
 │
-├── data/
-│   └── bible_text.txt
-│
-├── src/
-│   ├── main.py
-│   ├── gui.py
-│   └── search.py
-│
-├── tests/
-│   └── test_search.py
+├── bibles_texts/
+│   └── 한글흠정역
+│   └── 한글개역
+│   └── 새번역
 │
 ├── README.md
 ├── requirements.txt
-└── setup.py
+└── web.py
+└── last_bible_jh.py
+└── Love_bible_jhs.exe
 ```
 ## 기여
 커뮤니티의 기여를 환영합니다. 기여하려면:
