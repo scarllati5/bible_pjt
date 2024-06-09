@@ -131,7 +131,7 @@ def index():
                     overflow: hidden;
                 }
                 th.version, td.version {
-                    width: 0.5cm;
+                    width: 0.8cm;
                 }
                 th.book, td.book {
                     width: 1cm;
@@ -476,7 +476,7 @@ def search_by_verse(versions, query):
         verses = query.split(",")
         for vc in verses:
             vc = vc.strip()
-            match = re.match(r"(\D+)(\d*):?(\d*/?\d*)", vc)
+            match = re.match(r"(\D+)(\d*):?(\d*/?\d*|-?\d*)", vc)
             if match:
                 book = match.group(1)
                 chapter = match.group(2)
@@ -501,6 +501,20 @@ def search_by_verse(versions, query):
                         lines = [line.strip() for line in file if line.strip()]
                         if chapter and '/' in verse_range:
                             start_verse, end_verse = map(int, verse_range.split('/'))
+                            for line in lines:
+                                parts = line.split(maxsplit=1)
+                                if len(parts) != 2:
+                                    continue
+                                chapter_verse, content = parts
+                                try:
+                                    line_chapter, line_verse = map(int, chapter_verse.split(':'))
+                                except ValueError:
+                                    logging.warning(f"Invalid chapter_verse format: {chapter_verse}")
+                                    continue
+                                if line_chapter == int(chapter) and start_verse <= line_verse <= end_verse:
+                                    results.append((version, book, chapter_verse, content))
+                        elif chapter and '-' in verse_range:
+                            start_verse, end_verse = map(int, verse_range.split('-'))
                             for line in lines:
                                 parts = line.split(maxsplit=1)
                                 if len(parts) != 2:
@@ -551,6 +565,7 @@ def search_by_verse(versions, query):
     except Exception as e:
         logging.error('Error occurred in search_by_verse', exc_info=True)
     return results
+
 
 def search_by_content(versions, query):
     logging.debug(f"search_by_content called with versions={versions}, query={query}")
