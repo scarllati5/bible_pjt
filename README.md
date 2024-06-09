@@ -71,6 +71,11 @@ bible_pjt/
 **-검색 결과 인터페이스 스크린샷**
 ![스크린샷 2024-06-09 205556](https://github.com/SONG-JIN-HO/bible_pjt/assets/96678227/8657cf83-ad2e-484d-9dd0-30fcee6a73df)
 
+
+**-웹버전 인터페이스 스크린샷**
+![image](https://github.com/SONG-JIN-HO/bible_pjt/assets/96678227/5a100d9d-d7b8-4009-aef6-62961728cd5a)
+
+
 ## 감사의 말
 - 이 프로젝트의 생성과 개선에 도움을 주신 기여자 분들께 감사드립니다.
 - 이 프로젝트에서 사용된 라이브러리 및 도구 개발자 분들께 특별히 감사드립니다.
