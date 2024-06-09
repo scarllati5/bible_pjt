@@ -35,6 +35,7 @@
 
 ## 개발
 **프로젝트 구조**
+```
 bible-verse-search/
 │
 ├── data/
@@ -51,7 +52,7 @@ bible-verse-search/
 ├── README.md
 ├── requirements.txt
 └── setup.py
-
+```
 ## 기여
 커뮤니티의 기여를 환영합니다. 기여하려면:
 
