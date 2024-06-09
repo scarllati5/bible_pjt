@@ -34,7 +34,7 @@
 3. **"검색" 버튼을 눌러 관련 성경 구절을 팝업 창에 표시합니다.**
 
 ## 개발
-**프로젝트 구조**
+**-프로젝트 구조**
 ```
 bible-verse-search/
 │
@@ -56,15 +56,15 @@ bible-verse-search/
 ## 기여
 커뮤니티의 기여를 환영합니다. 기여하려면:
 
-레포지토리를 포크합니다.
-새로운 브랜치를 생성합니다 (git checkout -b feature-branch).
-변경사항을 커밋합니다 (git commit -am 'Add new feature').
-브랜치에 푸시합니다 (git push origin feature-branch).
-새로운 풀 리퀘스트를 생성합니다.
+- 레포지토리를 포크합니다.
+- 새로운 브랜치를 생성합니다 (git checkout -b feature-branch).
+- 변경사항을 커밋합니다 (git commit -am 'Add new feature').
+- 브랜치에 푸시합니다 (git push origin feature-branch).
+- 새로운 풀 리퀘스트를 생성합니다.
 
 ## 개발자
-개발자 1: 송진호
-개발자 2: 송준호
+- 개발자 1: 송진호
+- 개발자 2: 송준호
 
 ## 스크린샷
 **검색 인터페이스 스크린샷**
@@ -74,10 +74,10 @@ bible-verse-search/
 ![스크린샷 2024-06-09 205556](https://github.com/SONG-JIN-HO/bible_pjt/assets/96678227/8657cf83-ad2e-484d-9dd0-30fcee6a73df)
 
 ## 감사의 말
-이 프로젝트의 생성과 개선에 도움을 주신 기여자 분들께 감사드립니다.
-이 프로젝트에서 사용된 라이브러리 및 도구 개발자 분들께 특별히 감사드립니다.
+- 이 프로젝트의 생성과 개선에 도움을 주신 기여자 분들께 감사드립니다.
+- 이 프로젝트에서 사용된 라이브러리 및 도구 개발자 분들께 특별히 감사드립니다.
 
 ## 연락처
-질문이나 피드백은 [sprial02@naver.com]로 연락해 주세요.
+- 질문이나 피드백은 [sprial02@naver.com]로 연락해 주세요.
 
 
