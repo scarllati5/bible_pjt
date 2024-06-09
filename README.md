@@ -1,6 +1,3 @@
-<style>
-   body {
-font-family: 'Nanum Gothic', sans-serif;
 # 성경 구절 검색 애플리케이션 V1.0
 
 ## 개요
@@ -86,5 +83,4 @@ bible_pjt/
 ## 연락처
 - 질문이나 피드백은 [sprial02@naver.com]로 연락해 주세요.
 
-</style>
-<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+
