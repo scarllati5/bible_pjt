@@ -19,16 +19,16 @@
 1. **레포지토리 클론**:
    ```sh
    git clone https://github.com/SONG-JIN-HO/bible_pjt.git
-   cd bible_pjt```
+   cd bible_pjt
 
 2. **의존성 설치**:
 파이썬이 설치되어 있는지 확인하세요. 그런 다음 필요한 패키지를 설치합니다: 현재는 사용 하지 않아도 됩니다.
    ```sh
-   pip install -r requirements.txt```
+   pip install -r requirements.txt
 3. **애플리케이션 실행**:
    ```sh
    python last_bible_jh.py
-   python web.py```
+   python web.py
 ## 사용법
 1. **실행 파일을 실행하거나 명령줄에서 애플리케이션을 실행합니다.**
 2. **검색 창에 키워드나 구절을 입력합니다.**
