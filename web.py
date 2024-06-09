@@ -178,7 +178,7 @@ def index():
                     display: none;
                 }
                 .search-box {
-            margin-bottom: 0.5cm; /* 아래쪽 여백을 0.5cm로 설정 */
+                    margin-bottom: 0.5cm; /* 아래쪽 여백을 0.5cm로 설정 */
                 }
             </style>
         </head>
@@ -372,7 +372,75 @@ def index():
                 }
 
                 function abbreviateBook(book) {
-                    return book.length > 2 ? book.slice(0, 2) : book;
+                    switch(book) {
+                        case "창세기": return "창";
+                        case "출애굽기": return "출";
+                        case "레위기": return "레";
+                        case "민수기": return "민";
+                        case "신명기": return "신";
+                        case "여호수아": return "수";
+                        case "사사기": return "삿";
+                        case "룻기": return "룻";
+                        case "사무엘상": return "삼상";
+                        case "사무엘하": return "삼하";
+                        case "열왕기상": return "왕상";
+                        case "열왕기하": return "왕하";
+                        case "역대상": return "대상";
+                        case "역대하": return "대하";
+                        case "에스라": return "스";
+                        case "느헤미야": return "느";
+                        case "에스더": return "에";
+                        case "욥기": return "욥";
+                        case "시편": return "시";
+                        case "잠언": return "잠";
+                        case "전도서": return "전";
+                        case "아가": return "아";
+                        case "이사야": return "사";
+                        case "예레미야": return "렘";
+                        case "예레미야애가": return "애";
+                        case "에스겔": return "겔";
+                        case "다니엘": return "단";
+                        case "호세아": return "호";
+                        case "요엘": return "욜";
+                        case "아모스": return "암";
+                        case "오바댜": return "옵";
+                        case "요나": return "욘";
+                        case "미가": return "미";
+                        case "나훔": return "나";
+                        case "하박국": return "합";
+                        case "스바냐": return "습";
+                        case "학개": return "학";
+                        case "스가랴": return "슥";
+                        case "말라기": return "말";
+                        case "마태복음": return "마";
+                        case "마가복음": return "막";
+                        case "누가복음": return "눅";
+                        case "요한복음": return "요";
+                        case "사도행전": return "행";
+                        case "로마서": return "롬";
+                        case "고린도전서": return "고전";
+                        case "고린도후서": return "고후";
+                        case "갈라디아서": return "갈";
+                        case "에베소서": return "엡";
+                        case "빌립보서": return "빌";
+                        case "골로새서": return "골";
+                        case "데살로니가전서": return "살전";
+                        case "데살로니가후서": return "살후";
+                        case "디모데전서": return "딤전";
+                        case "디모데후서": return "딤후";
+                        case "디도서": return "딛";
+                        case "빌레몬서": return "몬";
+                        case "히브리서": return "히";
+                        case "야고보서": return "약";
+                        case "베드로전서": return "벧전";
+                        case "베드로후서": return "벧후";
+                        case "요한일서": return "요일";
+                        case "요한이서": return "요이";
+                        case "요한삼서": return "요삼";
+                        case "유다서": return "유";
+                        case "요한계시록": return "계";
+                        default: return book;
+                    }
                 }
             </script>
         </body>
@@ -438,7 +506,11 @@ def search_by_verse(versions, query):
                                 if len(parts) != 2:
                                     continue
                                 chapter_verse, content = parts
-                                line_chapter, line_verse = map(int, chapter_verse.split(':'))
+                                try:
+                                    line_chapter, line_verse = map(int, chapter_verse.split(':'))
+                                except ValueError:
+                                    logging.warning(f"Invalid chapter_verse format: {chapter_verse}")
+                                    continue
                                 if line_chapter == int(chapter) and start_verse <= line_verse <= end_verse:
                                     results.append((version, book, chapter_verse, content))
                         elif chapter and verse_range:
@@ -447,23 +519,35 @@ def search_by_verse(versions, query):
                                 if len(parts) != 2:
                                     continue
                                 chapter_verse, content = parts
-                                if line.startswith(f"{chapter}:{verse_range} "):
-                                    results.append((version, book, chapter_verse, content))
+                                try:
+                                    if line.startswith(f"{chapter}:{verse_range} "):
+                                        results.append((version, book, chapter_verse, content))
+                                except ValueError:
+                                    logging.warning(f"Invalid chapter_verse format: {chapter_verse}")
+                                    continue
                         elif chapter:
                             for line in lines:
                                 parts = line.split(maxsplit=1)
                                 if len(parts) != 2:
                                     continue
                                 chapter_verse, content = parts
-                                if line.startswith(f"{chapter}:"):
-                                    results.append((version, book, chapter_verse, content))
+                                try:
+                                    if line.startswith(f"{chapter}:"):
+                                        results.append((version, book, chapter_verse, content))
+                                except ValueError:
+                                    logging.warning(f"Invalid chapter_verse format: {chapter_verse}")
+                                    continue
                         else:
                             for line in lines:
                                 parts = line.split(maxsplit=1)
                                 if len(parts) != 2:
                                     continue
                                 chapter_verse, content = parts
-                                results.append((version, book, chapter_verse, content))
+                                try:
+                                    results.append((version, book, chapter_verse, content))
+                                except ValueError:
+                                    logging.warning(f"Invalid chapter_verse format: {chapter_verse}")
+                                    continue
     except Exception as e:
         logging.error('Error occurred in search_by_verse', exc_info=True)
     return results
