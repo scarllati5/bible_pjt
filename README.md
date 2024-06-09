@@ -10,24 +10,24 @@
 - **데이터**: 포괄적인 성경 텍스트 데이터베이스 포함.
 
 ## 사용 기술
-- **프로그래밍 언어**: 파이썬
-- **GUI 프레임워크**: Tkinter (또는 사용된 다른 GUI 프레임워크)
-- **개발 환경**: 비주얼 스튜디오 코드
+- **프로그래밍 언어**: Python
+- **GUI 프레임워크**: Tkinter,Flask (GUI 프레임워크)
+- **개발 환경**: Visual Studio Code
 - **버전 관리**: Git 및 GitHub
 
 ## 설치 방법
 1. **레포지토리 클론**:
    ```sh
-   git clone https://github.com/yourusername/bible-verse-search.git
-   cd bible-verse-search```
+   git clone https://github.com/SONG-JIN-HO/bible_pjt.git
+   cd bible_pjt```
 
 2. **의존성 설치**:
-파이썬이 설치되어 있는지 확인하세요. 그런 다음 필요한 패키지를 설치합니다:
+파이썬이 설치되어 있는지 확인하세요. 그런 다음 필요한 패키지를 설치합니다: 현재는 사용 하지 않아도 됩니다.
    sh
    pip install -r requirements.txt
 3. **애플리케이션 실행**:
    sh
-   python main.py
+   python last_bible_jh.py
 ## 사용법
 1. **실행 파일을 실행하거나 명령줄에서 애플리케이션을 실행합니다.**
 2. **검색 창에 키워드나 구절을 입력합니다.**
@@ -55,7 +55,6 @@ bible-verse-search/
 ```
 ## 기여
 커뮤니티의 기여를 환영합니다. 기여하려면:
-
 - 레포지토리를 포크합니다.
 - 새로운 브랜치를 생성합니다 (git checkout -b feature-branch).
 - 변경사항을 커밋합니다 (git commit -am 'Add new feature').
@@ -63,14 +62,14 @@ bible-verse-search/
 - 새로운 풀 리퀘스트를 생성합니다.
 
 ## 개발자
-- 개발자 1: 송진호
-- 개발자 2: 송준호
+- 개발자 : 송진호
+- 개발자 : 송준호
 
 ## 스크린샷
-**검색 인터페이스 스크린샷**
+**-검색 인터페이스 스크린샷**
 ![image](https://github.com/SONG-JIN-HO/bible_pjt/assets/96678227/f3d101e3-5421-4e66-993c-28dcd611ada8)
 
-**검색 결과 인터페이스 스크린샷**
+**-검색 결과 인터페이스 스크린샷**
 ![스크린샷 2024-06-09 205556](https://github.com/SONG-JIN-HO/bible_pjt/assets/96678227/8657cf83-ad2e-484d-9dd0-30fcee6a73df)
 
 ## 감사의 말
