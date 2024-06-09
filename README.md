@@ -29,6 +29,8 @@
    ```sh
    python last_bible_jh.py
    python web.py
+   Love_Bible_JHS.exe
+   
 ## 사용법
 1. **실행 파일을 실행하거나 명령줄에서 애플리케이션을 실행합니다.**
 2. **검색 창에 키워드나 구절을 입력합니다.**
