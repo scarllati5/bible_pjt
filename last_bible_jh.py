@@ -67,6 +67,8 @@ def search_verse(event=None):
     set_selected_versions(version_vars)  # 선택된 버전 업데이트
     result_list.delete(*result_list.get_children())
     results = perform_search_verse(book_chapter_verse)
+    if not results:
+        show_centered_messagebox("검색 결과", "찾을 수 없는 성경구절입니다")
     
     # 중복된 결과를 제거하기 위해 집합을 사용
     seen = set()
@@ -151,6 +153,11 @@ def search_content(event=None):
     results = perform_search_content(query)
     for result in results:
         result_list.insert("", tk.END, values=result)
+    if not results:
+        show_centered_messagebox("검색 결과", "찾을 수 없는 성경내용입니다")
+    else:
+        for result in unique_results:
+            result_list.insert("", tk.END, values=result)
     count_label.config(text=f"찾았음: {len(results)} 개")
 
 def perform_search_content(query):
@@ -243,7 +250,7 @@ verse_button.grid(row=0, column=2, padx=5)
 verse_example_label = tk.Label(verse_frame, text="[단일검색 : 창, 창3, 창2:9] [이어서검색 : 요1:1/12] [다중검색(콤마로구분) : 사1:1,마1:1]", font=("맑은 고딕", 9))
 verse_example_label.grid(row=1, column=0, columnspan=3, padx=5, sticky="w")
 
-# 성경 내용 검색 프레임
+# 검색 프레임
 content_frame = tk.Frame(search_frame, bd=2, relief="groove", padx=10, pady=10)
 content_frame.grid(row=0, column=3, columnspan=3, padx=10, pady=5, sticky="ew")
 content_frame.columnconfigure(1, weight=1)
