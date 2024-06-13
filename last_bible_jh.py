@@ -151,6 +151,11 @@ def search_content(event=None):
     results = perform_search_content(query)
     for result in results:
         result_list.insert("", tk.END, values=result)
+    if not results:
+        show_centered_messagebox("검색 결과", "찾을 수 없는 성경내용입니다")
+    else:
+        for result in unique_results:
+            result_list.insert("", tk.END, values=result)
     count_label.config(text=f"찾았음: {len(results)} 개")
 
 def perform_search_content(query):
